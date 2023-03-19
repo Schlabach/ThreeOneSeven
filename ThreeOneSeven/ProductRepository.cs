@@ -26,13 +26,13 @@ namespace ThreeOneSeven
 
         public void UpdateProduct(Product product)
         {
-            _conn.Execute("UPDATE products SET Name = @name, Price = @price, AmazonPrice = @amazonprice, StockLevel = @stocklevel WHERE ProductID = @id",
-                new { name = product.Name, price = product.Price, amazonPrice = product.AmazonPrice, stocklevel = product.StockLevel, id = product.ProductID });
+            _conn.Execute("UPDATE products SET Name = @name, Price = @price, AmazonPrice = @amazonPrice, StockLevel = @stockLevel WHERE ProductID = @id",
+                new { name = product.Name, price = product.Price, amazonPrice = product.AmazonPrice, stockLevel = product.StockLevel, id = product.ProductID });
         }
 
         public void InsertProduct(Product productToInsert)
         {
-            _conn.Execute("INSERT INTO products (NAME, PRICE, AMAZONPRICE, STOCKLEVEL, CATEGORYID) VALUES (@name, @price, @amazonprice, @stocklevel, @categoryID);",
+            _conn.Execute("INSERT INTO products (NAME, PRICE, AMAZONPRICE, STOCKLEVEL, CATEGORYID) VALUES (@name, @price, @amazonPrice, @stockLevel, @categoryID);",
                 new { name = productToInsert.Name, price = productToInsert.Price, amazonPrice = productToInsert.AmazonPrice, stockLevel = productToInsert.StockLevel, categoryID = productToInsert.CategoryID });
 
         }
